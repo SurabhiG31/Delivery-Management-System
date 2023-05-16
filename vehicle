@@ -1,0 +1,14 @@
+#5) VEHICLE TABLE
+
+create table vehicle(
+vid varchar(10),
+vehiclenumber varchar(20)); 
+
+ALTER TABLE `vehicle`
+	ADD PRIMARY KEY (`vid`); 
+
+#INSERTING VALUES
+INSERT INTO vehicle(vid,vehiclenumber) values 
+('V1','KA4568'),
+('V2','KA3245'),
+('V3','KA0987');
