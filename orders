@@ -1,0 +1,32 @@
+#4) ORDERS TABLE
+
+create table orders(
+oid varchar(10),
+pid varchar(10),
+cid int,
+eid varchar(10),
+odate date,
+price int,
+quantity int,
+deliverystatus int NOT NULL DEFAULT 0, #0:not delivered 1:delivered 
+address varchar(50));
+
+ALTER TABLE `orders`
+	ADD PRIMARY KEY (`oid`);    
+ALTER TABLE orders
+	ADD FOREIGN KEY (cid) REFERENCES customer(cid);   
+ALTER TABLE orders
+	ADD FOREIGN KEY (pid) REFERENCES products(pid);   
+ALTER TABLE orders
+	ADD FOREIGN KEY (eid) REFERENCES employee(eid);     
+  
+#INSERTING VALUES
+INSERT INTO orders(oid,pid,cid,eid,odate,price,quantity,deliverystatus,address) values
+('Ord100','P008',1001,'E001','2022-10-20',50,2,1,'Bengaluru');
+INSERT INTO orders(oid,pid,cid,eid,odate,price,quantity,deliverystatus,address) values
+('Ord110','P006',10010,'E001','2022-10-20',150,1,1,'Chennai'),
+('Ord120','P0010',1009,'E002','2022-10-10',50,5,1,'Sikkim'),
+('Ord130','P006',1004,'E003','2022-10-25',150,1,1,'Bengaluru'),
+('Ord140','P0011',1004,'E003','2022-10-15',20,2,1,'Bengaluru'),
+('Ord160','P001',1003,'E002','2022-10-12',20,1,0,'Chennai'),
+('Ord170','P007',1008,'E002','2022-10-12',150,1,0,'Bengaluru');
