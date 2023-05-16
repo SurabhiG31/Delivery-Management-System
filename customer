@@ -1,0 +1,28 @@
+#1) CUSTOMER TABLE
+
+create table customer(
+cid int,
+custname varchar(30),
+email varchar(30),
+pword varchar(10),
+phno varchar(10),
+address varchar(50));
+
+ALTER TABLE `customer`
+	ADD PRIMARY KEY (`cid`);
+ALTER TABLE `customer`    
+	MODIFY `cid` int NOT NULL AUTO_INCREMENT;
+  
+#INSERTING VALUES
+INSERT INTO customer(cid,custname,email,pword,phno,address) values
+(1001,'A','A@gmail.com','a1','8907463782','Bengaluru');
+INSERT INTO customer(cid,custname,email,pword,phno,address) values
+(1002,'B','B@gmail.com','b2','6378902133','Chennai'),
+(1003,'C','C@gmail.com','c3','7463325122','Chennai'),
+(1004,'D','D@gmail.com','d4','9000745362','Bengaluru'),
+(1005,'E','E@gmail.com','e5','7781234456','Vizag'),
+(1006,'F','F@gmail.com','f6','9845673421','Chennai'),
+(1007,'G','G@gmail.com','g7','9084325644','Mumbai'),
+(1008,'H','H@gmail.com','h8','8342009745','Bengaluru'),
+(1009,'I','I@gmail.com','i9','6790456782','Sikkim'),
+(10010,'J','J@gmail.com','j10','9043567223','Chennai');
