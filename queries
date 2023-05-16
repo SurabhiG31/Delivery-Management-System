@@ -1,0 +1,51 @@
+#1)Nested queries:
+select cid,custname,phno
+from customer
+where address='Bengaluru';
+
+#2)correlated query
+select cid,oid,pid
+from orders
+where oid in (select oid from orders
+				where deliverystatus = 0);
+
+select C.cid,C.custname,C.phno
+from customer as C
+where cid in (select cid from orders
+				where deliverystatus = 0);
+
+#3)set operations
+select pid from orders
+where EXISTS
+(select pid from products);
+
+Select oid from orders where (odate='2022-10-10')
+UNION 
+select oid from orders where (odate='2022-10-12');
+
+#4)Aggregate function
+#count of the number of orders vehicleno KA3245 has
+select oid
+from orders 
+where eid = 'E001';
+
+#5)order by clause
+SELECT * FROM orders
+ORDER BY pid ASC;
+
+SELECT * FROM products
+ORDER BY prodname;
+
+
+#6)trigger
+delimiter //
+CREATE TRIGGER status_update BEFORE INSERT ON orders
+FOR EACH ROW
+BEGIN
+	IF NEW.deliverystatus = NULL THEN
+		SET NEW.deliverystatus = 0;
+END
+delimiter ;
+
+
+
