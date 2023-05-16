@@ -1,0 +1,22 @@
+#2) EMPLOYEE TABLE
+
+create table employee(
+eid varchar(10),
+vid varchar(10),
+empname varchar(30),
+phno varchar(10),
+email varchar(30),
+pword varchar(10));
+
+ALTER TABLE `employee`
+	ADD PRIMARY KEY (`eid`);
+ALTER TABLE `employee`    
+	MODIFY `eid` int NOT NULL AUTO_INCREMENT;
+ALTER TABLE employee
+	ADD FOREIGN KEY (vid) REFERENCES vehicle(vid);  
+  
+#INSERTING VALUES
+INSERT INTO employee(eid,vid,empname,phno,email,pword) values
+('E001','V1','Amy','8576903342','amy@gmail.com','amy1'),
+('E002','V2','Charles','6903412289','charles@gmail.com','charles2'),
+('E003','V3','Gina','7599043221','gina@gmail.com','gina3');
