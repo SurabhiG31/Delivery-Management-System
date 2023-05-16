@@ -1,0 +1,25 @@
+#3) PRODUCTS TABLE
+
+create table products(
+pid varchar(10),
+prodname varchar(20),
+prod_desc varchar(50),
+price int);   
+
+ALTER TABLE `products`
+	ADD PRIMARY KEY (`pid`);     
+
+#INSERTING VALUES
+INSERT INTO products(pid,prodname,prod_desc,price) values
+('P001','milk','dairy',20);
+INSERT INTO products(pid,prodname,prod_desc,price) values
+('P002','curd','dairy',30),
+('P003','flour','basic',50),
+('P004','oil','basic',100),
+('P005','veggies','basic',200),
+('P006','soap','bath',150),
+('P007','shampoo','bath',150),
+('P008','chips','snacks',50),
+('P009','chocolates','snacks',50),
+('P0010','cola','drinks',50),
+('P0011','water','drinks',20);
