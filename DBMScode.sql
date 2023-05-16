@@ -168,9 +168,8 @@ ORDER BY pid ASC;
 SELECT * FROM products
 ORDER BY prodname;
 
-#5)function
 
-#6)trigger
+#5)trigger
 DELIMITER $$
 CREATE FUNCTION totalamt(ordid varchar(10))
 RETURNS INT
